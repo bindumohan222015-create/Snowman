@@ -208,6 +208,3 @@ If Primary site considered fail (i.e. multiple failovers of one or more applicat
 if it is a Distributed Component Architecture)), then the Primary site should shutdown and thus Standby site
 would be required to be started up. 
 
-## Author
-
-Colin But.

@@ -6,8 +6,8 @@
 trigger:
 - master
 
-pool:
-  vmImage: snowmanpool
+pool: snowmanpool
+  
 
 steps:
 - script: echo Hello, world!

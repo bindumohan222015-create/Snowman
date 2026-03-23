@@ -35,3 +35,13 @@ target/*
 ehthumbs.db
 Thumbs.db
 /target/
+
+# SSH keys
+etc/ssh_key
+etc/ssh_key.pub
+*.pem
+*.key
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub

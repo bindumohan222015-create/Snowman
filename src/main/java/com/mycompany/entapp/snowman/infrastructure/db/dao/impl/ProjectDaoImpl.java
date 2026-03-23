@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class ProjectDaoImpl extends AbstractHibernateDao implements ProjectDao {
+
     @Override
     public Project retrieveProject(int projectId) {
         return (Project) getCurrentSession().get(Project.class, projectId);
@@ -19,11 +20,14 @@ public class ProjectDaoImpl extends AbstractHibernateDao implements ProjectDao {
 
     @Override
     public void saveProject(Project project) {
-        getCurrentSession().save(project);
+        getCurrentSession().saveOrUpdate(project);
     }
 
     @Override
     public void removeProject(int projectId) {
-        getCurrentSession().delete(projectId);
+        Project project = retrieveProject(projectId);
+        if (project != null) {
+            getCurrentSession().delete(project);
+        }
     }
 }

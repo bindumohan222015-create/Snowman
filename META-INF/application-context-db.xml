@@ -7,6 +7,7 @@
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
+    <!-- for ORM (JPA: Hibernate)-->
     <bean id="sessionFactory"
           class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />

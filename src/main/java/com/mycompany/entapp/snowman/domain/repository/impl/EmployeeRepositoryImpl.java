@@ -10,14 +10,17 @@ import com.mycompany.entapp.snowman.domain.repository.EmployeeRepository;
 import com.mycompany.entapp.snowman.infrastructure.db.dao.EmployeeDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
+@Transactional
 public class EmployeeRepositoryImpl implements EmployeeRepository {
 
     @Autowired
     private EmployeeDao employeeDao;
 
     @Override
+    @Transactional(readOnly = true)
     public Employee findEmployee(int employeeId) {
         return employeeDao.retrieveEmployee(employeeId);
     }

@@ -29,23 +29,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void updateEmployee(Employee employee) {
-        Employee existingEmployee = getEmployee(employee.getId());
-
-        if (existingEmployee != null) {
-            employeeRepository.saveEmployee(employee);
-        } else {
-            throw new RuntimeException("There is no existing employee with id: " + employee.getId());
-        }
+        employeeRepository.saveEmployee(employee);
     }
 
     @Override
     public void deleteEmployee(int employeeId) {
-        Employee existingEmployee = getEmployee(employeeId);
-
-        if (existingEmployee != null) {
-            employeeRepository.removeEmployee(employeeId);
-        } else {
-            throw new RuntimeException("There is no existing employee with id: " + employeeId);
-        }
+        employeeRepository.removeEmployee(employeeId);
     }
 }

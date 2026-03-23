@@ -23,6 +23,13 @@ public class ReportingSnapshotTask {
     private ReportingService reportingService;
 
     public void executeTask() {
-        LOGGER.info(reportingService.retrieveReportingData().toString());
+
+ReportingData data = reportingService.retrieveReportingData();
+    if (data != null) {
+        LOGGER.info(data.toString());
+    } else {
+        LOGGER.warn("No reporting data available");
     }
+    }
+
 }

@@ -16,6 +16,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.Set;
+import java.io.Serializable;
 
 @Entity
 public class Client {
@@ -27,7 +28,7 @@ public class Client {
     @Column(name = "client_name", nullable = false)
     private String clientName;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "client")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "client")
     private Set<Project> projects;
 
     public int getId() {

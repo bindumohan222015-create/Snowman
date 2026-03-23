@@ -20,9 +20,9 @@ public abstract class AbstractJDBCDao {
     private static final String DATABASE_PORT = "3306";
     private static final String DATABASE = "snowman";
 
-    private static final String DATABASE_CONNECTION_URL = "jdbc:mysql://" + DATABASE_HOST + ":" + DATABASE_PORT + "/" + DATABASE;
-    private static final String DATABASE_USERNAME = "username";
-    private static final String DATABASE_PASSWORD = "password";
+    private static final String DATABASE_CONNECTION_URL = "jdbc:mysql://" + DATABASE_HOST + ":" + DATABASE_PORT + "/" + DATABASE + "?serverTimezone=UTC";
+    private static final String DATABASE_USERNAME = "snowuser";
+    private static final String DATABASE_PASSWORD = "snowpass";
 
     protected void setupDBDriver() {
         try {
